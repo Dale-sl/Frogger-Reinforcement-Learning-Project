@@ -16,3 +16,5 @@ dependencies:
   - pip:
       - gymnasium
       - gymnasium[atari]
+      - gymnasium[accept-rom-license] # When you create a conda env with this file you agree to this license!
+      - gymnasium[other]
