@@ -1,0 +1,9 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{n}{double} \PYG{o}{==} \PYG{k+kc}{False}\PYG{p}{:}
+    \PYG{n}{pred\PYGZus{}next\PYGZus{}vals} \PYG{o}{=} \PYG{n}{target\PYGZus{}network}\PYG{p}{(}\PYG{n}{nst\PYGZus{}batch}\PYG{p}{)}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{dim}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{.}\PYG{n}{values}
+\PYG{k}{else}\PYG{p}{:}
+    \PYG{n}{target\PYGZus{}pred} \PYG{o}{=} \PYG{n}{target\PYGZus{}network}\PYG{p}{(}\PYG{n}{nst\PYGZus{}batch}\PYG{p}{)}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{dim}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{.}\PYG{n}{values}
+    \PYG{n}{policy\PYGZus{}pred} \PYG{o}{=} \PYG{n}{policy\PYGZus{}network}\PYG{p}{(}\PYG{n}{nst\PYGZus{}batch}\PYG{p}{)}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{dim}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{.}\PYG{n}{values}
+    \PYG{n}{pred\PYGZus{}next\PYGZus{}vals} \PYG{o}{=} \PYG{n}{torch}\PYG{o}{.}\PYG{n}{stack}\PYG{p}{((}\PYG{n}{target\PYGZus{}pred}\PYG{p}{,} \PYG{n}{policy\PYGZus{}pred}\PYG{p}{))}\PYG{o}{.}\PYG{n}{min}\PYG{p}{(}\PYG{n}{dim} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{o}{.}\PYG{n}{values}
+\PYG{n}{pred\PYGZus{}next\PYGZus{}vals}\PYG{p}{[}\PYG{n}{t\PYGZus{}batch}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}
+\end{MintedVerbatim}

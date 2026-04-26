@@ -1,0 +1,4 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{linear\PYGZus{}eps\PYGZus{}decay}\PYG{p}{:}
+    \PYG{n}{eps} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{i} \PYG{o}{*} \PYG{p}{((}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{eps\PYGZus{}goal}\PYG{p}{)} \PYG{o}{/} \PYG{n}{linear\PYGZus{}eps\PYGZus{}decay}\PYG{p}{)}
+\end{MintedVerbatim}
